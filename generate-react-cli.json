@@ -7,13 +7,14 @@
 			"path": "src/components",
 			"withStyle": true,
 			"withTest": true,
-			"withStory": false,
+			"withStory": true,
 			"withLazy": false,
 			"customTemplates": {
 				"component": "./templates/TemplateName.tsx",
 				"style": "./templates/TemplateName.style.ts",
-				"test": "./templates/TemplateName.test.tsx"
+				"test": "./templates/TemplateName.test.tsx",
+				"story": "./templates/TemplateName.stories.tsx"
 			}
-		},
+		}
 	}
 }
