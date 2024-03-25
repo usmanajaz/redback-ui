@@ -1,8 +1,8 @@
-import { theme } from './theme.ts';
+import { themes } from './themes';
 
-export type RedbackUiTheme = typeof theme;
+export type RedbackUiTheme = typeof themes.default;
 
-export type ThemeColor = keyof typeof theme.colors;
+export type ThemeColor = keyof typeof themes.default.colors;
 
 export type ThemeElementAppearance = 'solid' | 'outline';
 

@@ -4,7 +4,7 @@ import { ThemeColor, ThemeElementAppearance, ThemeElementSize } from '../../type
 
 type ButtonProps = {
 	label: string;
-	color: ThemeColor;
+	color?: ThemeColor;
 	onClick: () => void;
 	appearance?: ThemeElementAppearance;
 	size?: ThemeElementSize;
@@ -12,7 +12,7 @@ type ButtonProps = {
 
 const Button: FC<ButtonProps> = ({
 	label,
-	color,
+	color = 'primary',
 	onClick,
 	appearance = 'solid',
 	size = 'md'
