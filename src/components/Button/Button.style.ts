@@ -8,10 +8,17 @@ type StyledButtonProps = {
 	$size: ThemeElementSize
 }
 export const StyledButton = styled.button<StyledButtonProps>`
+	font-family: ${props => props.theme.fontFamily.body};
+	font-weight: ${props => props.theme.fontWeights.normal};
 	background: ${props => props.theme.colors[props.$color]};
 	color: ${props => readableColor(props.theme.colors[props.$color])};
+	text-decoration: underline;
+	text-decoration-color: transparent;
 	appearance: none;
 	border-radius: 3rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: ${props => props.theme.fontSizes.sm};
 	${props => {
 		if(props.$size === 'sm') {
 			return `
@@ -30,11 +37,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
 			font-size: ${props.theme.fontSizes.sm};
 		`;
 	}};
-	cursor: pointer;
-	background: ${props => props.theme.colors.background};
-	transition: all 0.3s ease;
 
 	&:hover, &:focus, &:active {
-		background: ${props => darken(0.3, props.theme.colors.background)};
+		background: ${props => darken(0.3, props.theme.colors[props.$color])};
+		text-decoration-color: currentColor;
 	}
 `;

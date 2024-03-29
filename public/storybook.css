@@ -1,0 +1,90 @@
+/**
+ * This file is for Storybook UI mods that can't be done directly in the theme in manager.ts
+ * The same for the docs/preview is located in ./storybook/preview-head.html
+ */
+
+body {
+	font-family: 'Inter Tight', sans-serif;
+}
+
+.sidebar-header a {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.sidebar-header a img {
+	max-width: 4rem;
+}
+
+.sidebar-header a:after {
+	content: 'Redback UI';
+	font-size: 1.33rem;
+	font-weight: 700;
+	margin-left: 0.5rem;
+	color: #370e4a;
+}
+
+.sb-bar > div {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.sb-bar > div > div {
+	display: contents;
+}
+
+.sb-bar button[title*="Go full screen"] {
+	display: block;
+	margin-left: auto;
+}
+
+.sb-bar div:has(> button[title="theme"]) {
+	order: 100;
+	display: flex;
+	align-items: center;
+}
+
+.sb-bar button[title="theme"] {
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+	background: #e97462;
+	color: white;
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	transition: all 0.2s;
+}
+
+.sb-bar button[title="theme"]:hover,
+.sb-bar button[title="theme"]:active {
+	background: #cb5c4b;
+	color: white;
+}
+
+.sb-bar button[title="theme"]:focus-visible {
+	text-decoration-color: currentColor;
+}
+
+.sb-bar button[title="theme"] svg {
+	order: -1;
+}
+
+.sb-bar button[title="theme"]:before {
+	content: 'Theme:';
+	margin-right: -0.25rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.sb-bar button[title="theme"]:after {
+	content: '▼';
+	margin-left: 0.25rem;
+}
+
+div[data-testid="tooltip"] a[id*="list-item-"]:hover,
+div[data-testid="tooltip"] a[id*="list-item-"]:focus,
+div[data-testid="tooltip"] a[id*="list-item-"]:active {
+	background: rgba(233, 116, 98, 0.1);
+}
