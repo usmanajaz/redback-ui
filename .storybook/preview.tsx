@@ -36,19 +36,30 @@ const preview: Preview = {
 				if(pageOrder.includes(a.title) && pageOrder.includes(b.title)) {
 					return pageOrder.indexOf(a.title) - pageOrder.indexOf(b.title);
 				}
+				const sectionOrder = ['Design Tokens', 'Components'];
+				if (sectionOrder.some(section => a.title.startsWith(section) && sectionOrder.some(section => b.title.startsWith(section)))) {
+					const aSection = sectionOrder.find(section => a.title.startsWith(section));
+					const bSection = sectionOrder.find(section => b.title.startsWith(section));
+					return sectionOrder.indexOf(aSection) - sectionOrder.indexOf(bSection);
+				}
 				return a.title === b.title
 					? 0
 					: a.id.localeCompare(b.id, undefined, { numeric: true });
 			},
 		},
 		docs: {
-			container: ({ children, context }) => (
-				<DocsContainer context={context}>
-					<Unstyled>
-						{children}
-					</Unstyled>
-				</DocsContainer>
-			),
+			container: ({ children, context }) => {
+				const theme = context.channel.data.setGlobals[0].globals.theme ?? 'default';
+				return (
+					<RedbackUiThemeProvider theme={themes[theme]}>
+						<DocsContainer context={context}>
+							<Unstyled>
+								{children}
+							</Unstyled>
+						</DocsContainer>
+					</RedbackUiThemeProvider>
+				);
+			},
 			page: () => (
 				<Unstyled>
 					<Title/>

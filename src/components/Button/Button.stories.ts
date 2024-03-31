@@ -1,20 +1,23 @@
 import Button from './Button';
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react';
-import { themes } from '../../themes';
+import { themeColors } from '../../types.ts';
 
 const meta = {
 	title: 'Components/Button',
 	component: Button,
 	argTypes: {
 		label: { disable: true },
-		color: { control: 'select', options: Object.keys(themes.default.colors) },
+		color: { control: 'select', options: Object.keys(themeColors) },
 	},
 	args: {
 		label: 'Button',
 		onClick: fn() // spy on the onClick arg, so it will appear in the actions panel once invoked
 	},
 } satisfies Meta<typeof Button>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const defaultProps = {
 	onClick: fn()
@@ -30,9 +33,6 @@ const disableControls = {
 		},
 	}
 };
-
-export default meta;
-type Story = StoryObj<typeof meta>;
 
 export const Demo: Story = {
 	args: {

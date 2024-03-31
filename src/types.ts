@@ -1,8 +1,10 @@
 import { themes } from './themes';
+import omit from 'lodash/omit';
 
 export type RedbackUiTheme = typeof themes.default;
 
-export type ThemeColor = keyof typeof themes.default.colors;
+export const themeColors = omit(themes.default.colors, ['light', 'dark', 'background']);
+export type ThemeColor = keyof typeof themeColors;
 
 export type ThemeElementAppearance = 'solid' | 'outline';
 

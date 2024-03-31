@@ -2,13 +2,38 @@ import TemplateName from './TemplateName';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'TemplateName',
+	title: 'Components/TemplateName',
 	component: TemplateName,
 } satisfies Meta<typeof TemplateName>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Demo: Story = {
+const defaultProps = {
 
+};
+
+const disableControls = {
+	parameters: {
+		controls: {
+			disable: true
+		},
+		actions: {
+			disable: true
+		},
+	}
+};
+
+export const Demo: Story = {
+	args: {
+		...defaultProps
+	},
+	tags: ['excludeFromSidebar']
+};
+
+export const Default: Story = {
+	args: {
+		...defaultProps
+	},
+	...disableControls
 };

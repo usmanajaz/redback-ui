@@ -2,6 +2,7 @@ import { FC, PropsWithChildren, ReactNode } from 'react';
 import { RedbackUiWrapper } from './RedbackUiThemeProvider.style.ts';
 import { RedbackUiTheme } from '../../types.ts';
 import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from './GlobalStyle.tsx';
 
 type RedbackUiThemeProviderProps = {
 	theme: RedbackUiTheme;
@@ -14,6 +15,7 @@ const RedbackUiThemeProvider: FC<PropsWithChildren<RedbackUiThemeProviderProps>>
 }) => {
 	return (
 		<ThemeProvider theme={theme}>
+			<GlobalStyle/>
 			<RedbackUiWrapper id="redback-ui" data-testid="redback-ui.wrapper">
 				{children}
 			</RedbackUiWrapper>

@@ -1,2 +1,2 @@
 import styled from 'styled-components';
-export const TemplateNameWrapper = styled.div``;
+export const StyledTemplateName = styled.div``;

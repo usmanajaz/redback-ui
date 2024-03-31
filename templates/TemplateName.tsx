@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { TemplateNameWrapper } from './TemplateName.style';
+import { StyledTemplateName } from './TemplateName.style';
 
 type TemplateNameProps = {}
 
 const TemplateName: FC<TemplateNameProps> = () => {
 	return (
-		<TemplateNameWrapper data-testid="TemplateName">
+		<StyledTemplateName data-testid="TemplateName">
 			TemplateName Component
-		</TemplateNameWrapper>
+		</StyledTemplateName>
 	);
 };
 
