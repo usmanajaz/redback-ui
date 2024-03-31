@@ -13,7 +13,7 @@
 				"component": "./templates/TemplateName.tsx",
 				"style": "./templates/TemplateName.style.ts",
 				"test": "./templates/TemplateName.test.tsx",
-				"story": "./templates/TemplateName.stories.tsx"
+				"story": "./templates/TemplateName.stories.ts"
 			}
 		}
 	}
