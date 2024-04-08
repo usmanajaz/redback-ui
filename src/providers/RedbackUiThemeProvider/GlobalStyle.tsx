@@ -10,11 +10,21 @@ export const GlobalStyle = createGlobalStyle`
 		line-height: 1.4;
 	}
 	
+	h1, h2, h3, h4, h5, h6 {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	
 	h1 {
 		font-size: ${props => props.theme.fontSizes.xxl};
 	}
 	
 	h2 {
 		font-size: ${props => props.theme.fontSizes.xl};
+	}
+	
+	strong {
+		font-weight: ${props => props.theme.fontWeights.semibold};
 	}
 `;

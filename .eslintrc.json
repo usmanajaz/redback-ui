@@ -19,10 +19,13 @@
 		"react-refresh"
 	],
 	"rules": {
-		"indent": [
-			"warn",
-			"tab"
-		],
+		"indent": ["warn", "tab", {
+			"SwitchCase": 2,
+			"FunctionExpression": {
+				"parameters": 2,
+				"body": 1
+            }
+		}],
 		"quotes": [
 			"warn",
 			"single"
@@ -31,13 +34,9 @@
 			"warn",
 			"always"
 		],
-		"brace-style": [
-			1,
-			"stroustrup",
-			{
-				"allowSingleLine": false
-			}
-		],
+		"brace-style": [1, "stroustrup", {
+			"allowSingleLine": false
+		}],
 		"object-curly-spacing": [
 			"error",
 			"always"
@@ -57,5 +56,20 @@
 				"allowConstantExport": true
 			}
 		]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["*.style.ts"],
+			"rules": {
+				"indent": ["warn", "tab", {
+					"SwitchCase": 1,
+					"FunctionExpression": {
+						"parameters": 1,
+						"body": 1
+					},
+					"offsetTernaryExpressions": true
+				}]
+			}
+		}
+	]
 }

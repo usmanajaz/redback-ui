@@ -1,14 +1,14 @@
 import Button from './Button';
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeColors } from '../../types.ts';
+import { themeColorSubset } from '../../types.ts';
 
 const meta = {
 	title: 'Components/Button',
 	component: Button,
 	argTypes: {
 		label: { disable: true },
-		color: { control: 'select', options: Object.keys(themeColors) },
+		color: { control: 'select', options: Object.keys(themeColorSubset) },
 	},
 	args: {
 		label: 'Button',
@@ -46,7 +46,7 @@ export const Default: Story = {
 	args: {
 		...defaultProps,
 		color: 'primary',
-		label: 'Button',
+		label: 'Default button',
 	},
 	...disableControls
 };
@@ -71,6 +71,26 @@ export const Secondary: Story = {
 	...disableControls
 };
 
+export const PrimaryOutline: Story = {
+	args: {
+		...defaultProps,
+		color: 'primary',
+		label: 'Outline button (primary)',
+		appearance: 'outline'
+	},
+	...disableControls
+};
+
+export const SecondaryOutline: Story = {
+	args: {
+		...defaultProps,
+		color: 'secondary',
+		label: 'Outline button (secondary)',
+		appearance: 'outline'
+	},
+	...disableControls
+};
+
 export const Small: Story = {
 	args: {
 		...defaultProps,
@@ -80,3 +100,14 @@ export const Small: Story = {
 	},
 	...disableControls
 };
+
+export const Large: Story = {
+	args: {
+		...defaultProps,
+		color: 'primary',
+		label: 'Large button',
+		size: 'lg',
+	},
+	...disableControls
+};
+

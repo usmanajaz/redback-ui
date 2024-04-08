@@ -15,6 +15,17 @@
 				"test": "./templates/TemplateName.test.tsx",
 				"story": "./templates/TemplateName.stories.ts"
 			}
+		},
+		"doc": {
+			"path": "docs/components",
+			"withStyle": true,
+			"withTest": false,
+			"withStory": false,
+			"withLazy": false,
+			"customTemplates": {
+				"component": "./templates/TemplateName.doc.tsx",
+				"style": "./templates/TemplateName.doc.style.ts"
+			}
 		}
 	}
 }

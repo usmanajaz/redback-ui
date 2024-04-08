@@ -9,12 +9,13 @@ export default {
 	colors: {
 		primary: '#e97462',
 		secondary: '#370e4a',
+		subtle: '#b3a7b7',
+		light: '#f8f9fa',
+		dark: '#0e080e',
 		success: '#00af60',
 		error: '#970009',
 		warning: '#e97462',
-		subtle: '#b3a7b7',
-		light: '#fef7ff',
-		dark: '#0e080e',
+		info: '#00aeb2',
 		background: '#f8f9fa',
 	},
 	spacing: {
@@ -31,6 +32,7 @@ export default {
 	fontWeights: {
 		light: 300,
 		normal: 400,
+		semibold: 600,
 		bold: 700
 	},
 	// Automatically generate font size key-value pairs using the specified type scale and starting xs font size

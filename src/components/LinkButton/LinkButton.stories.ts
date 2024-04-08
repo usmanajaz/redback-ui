@@ -1,14 +1,22 @@
 import LinkButton from './LinkButton';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeColor, ThemeElementAppearance } from '../../types.ts';
-import { themeColors } from '../../types.ts';
+import { themeColorSubset } from '../../types.ts';
 
 const meta = {
 	title: 'Components/LinkButton',
 	component: LinkButton,
+	parameters: {
+		componentSubtitle: 'Like a Button, but rendered as an <a>.',
+		docs: {
+			description: {
+				component: 'All props and variations of Button are also available for LinkButton.'
+			},
+		},
+	},
 	argTypes: {
 		label: { disable: true },
-		color: { control: 'select', options: Object.keys(themeColors) },
+		color: { control: 'select', options: Object.keys(themeColorSubset) },
 		target: { control: 'radio', options: ['_blank', undefined] }
 	},
 } satisfies Meta<typeof LinkButton>;
