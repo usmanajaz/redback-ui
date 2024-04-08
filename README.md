@@ -19,7 +19,7 @@ Design system and UI component library for React, designed for Redback's data-dr
 ## Getting Started
 1. Clone the repository to your local machine
     ```bash
-    git clone https://github.com/Redback-Operations/redback-orion-web.git
+    git clone https://github.com/Redback-Operations/redback-ui.git
     ```
    (or SSH if you have set up SSH access to your GitHub account)
 2. Create a branch for your work, following the Capstone [Branching Guidelines](https://verdant-raindrop-f3e404.netlify.app/processes/quality-assurance/git-contributions-guide/#branching-guidelines)
