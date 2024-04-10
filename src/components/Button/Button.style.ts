@@ -8,6 +8,7 @@ type StyledButtonProps = {
 	$size: ThemeElementSize
 }
 export const StyledButton = styled.button<StyledButtonProps>`
+	display: inline-block;
 	font-family: ${props => props.theme.fontFamily.body};
 	font-weight: ${props => props.theme.fontWeights.normal};
 	background: ${props => props.theme.colors[props.$color]};
@@ -40,13 +41,13 @@ export const StyledButton = styled.button<StyledButtonProps>`
 		}
 		if(props.$size === 'lg') {
 			return `
-				padding: ${props.theme.spacing.sm} ${props.theme.spacing.xl};
+				padding: ${props.theme.spacing.sm} ${props.theme.spacing.xxl};
 				font-size: ${props.theme.fontSizes.default};
 			`;
 		}
 		return `
 			padding: ${props.theme.spacing.sm} ${props.theme.spacing.lg};
-			font-size: ${props.theme.fontSizes.sm};
+			font-size: 0.875rem; // in between sm (0.75rem) and default (1rem)
 		`;
 	}};
 

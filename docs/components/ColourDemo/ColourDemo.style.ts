@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { BaseColor, ThemeColor } from '../../../src/types';
-import { getLuminance, readableColor, shade, tint } from 'polished';
+import { getLuminance, shade, tint } from 'polished';
 
 export const StyledColourDocs = styled.div`
 	background: ${props => props.theme.colors.background};
@@ -45,7 +45,6 @@ export const ColourDemoBlock = styled.div<{$color: ThemeColor | BaseColor}>`
 		/* eslint-enable indent */
 		border: ${props => {
 			const isDark = getLuminance(props.theme.colors[props.$color]) < 0.5;
-			console.log(props.$color, isDark);
 			/* eslint-disable indent */ 
 			return props.theme.colors[props.$color] === props.theme.colors.background && props.$color !== 'background'
 				? `1px solid ${isDark 
@@ -61,7 +60,7 @@ export const ColourDemoBlock = styled.div<{$color: ThemeColor | BaseColor}>`
 	> span {
 		display: block;
 		text-align: right;
-		font-size: ${props => props.theme.fontSizes.sm};
+		font-size: ${props => props.theme.fontSizes.default};
 		padding-top: ${props => props.theme.spacing.xs};
 	}
 `;

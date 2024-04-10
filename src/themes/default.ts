@@ -24,6 +24,7 @@ export default {
 		md: '1rem',
 		lg: '1.5rem',
 		xl: '2rem',
+		xxl: '3rem'
 	},
 	fontFamily: {
 		body: '\'Inter Tight\', sans-serif',
@@ -40,7 +41,7 @@ export default {
 		const prev: string = <string>Object.values(result).pop();
 		result[size] = `${parseFloat(prev.replace('rem', '')) * typeScale}rem`;
 		return result;
-	}, { sm: '0.875rem', default: '1rem' })
+	}, { sm: '0.75rem', default: '1rem' })
 };
 
 

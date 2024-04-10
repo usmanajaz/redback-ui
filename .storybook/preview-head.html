@@ -37,4 +37,27 @@
     .docblock-code-toggle:focus {
 	    box-shadow: #e97462 0 -3px 0 0 inset !important;
     }
+    .sbdocs-wrapper hr {
+	    display: block;
+        color: transparent;
+	    border-top: 1px solid #b3a7b7;
+        margin: 2rem 0;
+    }
+    .sbdocs-wrapper p a,
+    .sbdocs-wrapper li a {
+        font-family: unset;
+        color: unset;
+        text-decoration: underline;
+        text-decoration-color: rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+    }
+    .sbdocs-wrapper p a:hover,
+    .sbdocs-wrapper p a:focus,
+    .sbdocs-wrapper p a:active,
+    .sbdocs-wrapper li a:hover,
+    .sbdocs-wrapper li a:focus,
+    .sbdocs-wrapper li a:active {
+        text-decoration-color: currentColor;
+    }
+
 </style>
