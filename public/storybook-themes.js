@@ -3,26 +3,30 @@ import { themes } from '../src/themes';
 // When the page first loads, get the theme name from local storage, or if not set, use 'default'
 // and add it as a data attribute to the body element
 window.addEventListener('DOMContentLoaded', function() {
-	// set the data attribute
-	document.body.setAttribute('data-ui-theme', localStorage.getItem('ui-theme') ?? 'default');
+	if(Object.keys(themes).includes(localStorage.getItem('ui-theme'))) {
+		// set the data attribute
+		document.body.setAttribute('data-ui-theme', localStorage.getItem('ui-theme') ?? 'default');
 
-	// Set storybook base UI theme (light or dark)
-	setBaseTheme(localStorage.getItem('ui-theme') ?? 'default');
+		// Set storybook base UI theme (light or dark)
+		setBaseTheme(localStorage.getItem('ui-theme') ?? 'default');
 
-	// set the global CSS variables
-	setGlobalCssVariables(localStorage.getItem('ui-theme') ?? 'default');
+		// set the global CSS variables
+		setGlobalCssVariables(localStorage.getItem('ui-theme') ?? 'default');
+	}
 });
 
 // When the theme setting in local storage changes, enact the changes that will enable the Storybook UI styling to change
 window.addEventListener('storage', (event) => {
-	// update the data attribute
-	document.body.setAttribute('data-ui-theme', event.newValue);
+	if(Object.keys(themes).includes(event.newValue)) {
+		// update the data attribute
+		document.body.setAttribute('data-ui-theme', event.newValue);
 
-	// Set storybook base UI theme (light or dark)
-	setBaseTheme(event.newValue);
+		// Set storybook base UI theme (light or dark)
+		setBaseTheme(event.newValue);
 
-	// update the global CSS variables
-	setGlobalCssVariables(event.newValue);
+		// update the global CSS variables
+		setGlobalCssVariables(event.newValue);
+	}
 });
 
 /**
