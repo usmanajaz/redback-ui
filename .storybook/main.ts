@@ -1,10 +1,16 @@
 import {type StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from "vite";
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const config: StorybookConfig = {
 	core: {
 		builder: '@storybook/builder-vite',
 	},
+	env: (config) => ({
+		...config,
+		STORYBOOK_BASE_URL: isProduction ? 'https://redback-operations.github.io/redback-ui' : 'http://localhost:6006',
+	}),
 	async viteFinal(config, { configType }) {
 		if (!config.optimizeDeps) {
 			config.optimizeDeps = { include: [] };
