@@ -1,10 +1,15 @@
 /**
  * This file is for Storybook UI mods that can't be done directly in the theme in manager.ts
- * The same for the docs/preview is located in ./storybook/preview-head.html
+ * The same for the docs/preview is located in ./storybook/preview-head.html.
+ * Colour-related overrides to make the UI match the selected theme should go in storybook-ui-themes.css
  */
 
 body {
 	font-family: 'Inter Tight', sans-serif;
+}
+
+#root {
+	padding-top: 40px; /* height of the toolbar which is fixed at the top */
 }
 
 .sidebar-header {
@@ -28,11 +33,20 @@ body {
 	}
 }
 
+.sidebar-container *, .sb-bar * {
+	font-family: 'Inter Tight', sans-serif;
+}
+
 .sb-bar {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+
 	> div {
 		display: flex;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: flex-end;
 
 		> div {
 			display: contents;
@@ -41,11 +55,9 @@ body {
 
 	button[title*="Go full screen"] {
 		display: block;
-		margin-left: auto;
 	}
 
 	div:has(> button[title="theme"]) {
-		order: 100;
 		display: flex;
 		align-items: center;
 	}
@@ -54,16 +66,9 @@ body {
 		font-weight: 300;
 		display: flex;
 		align-items: center;
-		background: #e97462;
-		color: white;
 		text-decoration: underline;
 		text-decoration-color: transparent;
 		transition: all 0.2s;
-
-		&:hover, &:active {
-			background: #cb5c4b;
-			color: white;
-		}
 
 		&:focus-visible {
 			text-decoration-color: currentColor;
@@ -90,6 +95,8 @@ body {
 
 div[data-testid="tooltip"] {
 	a[id*="list-item-"] {
+		font-family: 'Inter Tight', sans-serif !important;
+
 		&:hover, &:focus, &:active {
 			background: rgba(233, 116, 98, 0.1);
 		}

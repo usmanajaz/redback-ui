@@ -1,0 +1,112 @@
+/**
+ * Storybook UI (sidebar, toolbars, etc) styling overrides specific to applying a theme dynamically
+ * Quite hacky, so if you have a better way, I'd like to see it!
+ * - The global CSS variables and data-ui-theme attribute used here are set in public/storybook-themes.js (it has to be in the public directory for Storybook to access it)
+ * - A base light and dark theme is set in manager.ts, and in storybook-themes.js we set which to use as a base for our custom themes
+ */
+/*
+ * Overrides for all light themes
+ * (only things that can't be set in the theme in manager.ts)
+ */
+body.light {
+}
+
+/*
+ * Overrides for all dark themes
+ * (only things that can't be set in the theme in manager.ts)
+ */
+body.dark {
+
+	.sidebar-header {
+		a {
+			&:after {
+				color: var(--theme-color-light);
+			}
+		}
+	}
+}
+
+/**
+ * Overrides for specific Redback UI themes
+ */
+body[data-ui-theme="default"] {
+
+	.sb-bar {
+		background-color: var(--theme-color-secondary);
+
+		button[title="theme"] {
+			background-color: var(--theme-color-primary);
+			color: white;
+
+			&:hover, &:focus, &:active {
+				background-color: var(--theme-color-primary);
+				color: white;
+				text-decoration-color: currentColor;
+			}
+		}
+	}
+
+	.sidebar-container {
+
+		.sidebar-item {
+
+			&[data-selected="true"] {
+				background-color: var(--theme-color-secondary);
+
+				svg {
+					color: var(--theme-color-light);
+				}
+			}
+		}
+
+	}
+}
+
+body[data-ui-theme="smartrack"] {
+
+	.sb-bar {
+		background-color: var(--theme-color-primary);
+
+		button[title="theme"] {
+			background-color: var(--theme-color-secondary);
+			color: white;
+
+			&:hover, &:focus, &:active {
+				background-color: var(--theme-color-secondary);
+				color: white;
+				text-decoration-color: currentColor;
+			}
+		}
+	}
+
+	div:has(.sidebar-container) {
+		border-right-color: var(--theme-color-subtle);
+	}
+
+	.sidebar-container {
+		background-color: var(--theme-color-dark);
+
+		.sidebar-item {
+			color: var(--theme-color-light);
+
+			svg {
+				color: var(--theme-color-success);
+			}
+
+			a {
+				svg {
+					color: var(--theme-color-info);
+				}
+			}
+
+			&[data-selected="true"] {
+				background-color: var(--theme-color-primary);
+
+				svg {
+					color: var(--theme-color-light);
+				}
+			}
+		}
+	}
+}
+

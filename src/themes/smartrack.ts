@@ -1,4 +1,5 @@
 import defaultTheme from './default';
+import { shade, tint } from 'polished';
 
 const smartrack = {
 	...defaultTheme,
@@ -7,23 +8,10 @@ const smartrack = {
 		primary: '#84213A',
 		secondary: '#FF3465',
 		info: '#54bac1',
-		dark: '#0B0E10',
 		background: '#0B0E10',
+		dark: tint(0.05, '#0B0E10'),
+		subtle: shade(0.65, defaultTheme.colors.subtle)
 	},
 };
-
-document.head.insertAdjacentHTML('beforeend',  `
-	<style>
-	    body {
-	        --fit-color-primary: ${smartrack.colors.primary};
-	        --fit-color-secondary: ${smartrack.colors.secondary};
-	        --fit-color-info: ${smartrack.colors.secondary};
-	        --fit-color-subtle: ${smartrack.colors.subtle};
-	        --fit-color-dark: ${smartrack.colors.dark};
-	        --fit-color-light: ${smartrack.colors.light};
-	        --fit-color-background: ${smartrack.colors.background};
-	    }
-	</style>
-`);
 
 export default smartrack;

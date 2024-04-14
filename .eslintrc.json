@@ -67,6 +67,7 @@
 						"parameters": 1,
 						"body": 1
 					},
+					"MemberExpression": 1,
 					"offsetTernaryExpressions": true
 				}]
 			}

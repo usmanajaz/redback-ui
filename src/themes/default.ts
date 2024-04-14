@@ -1,11 +1,11 @@
 /**
- * Sample design system theme
+ * Sample/default design system theme based on Redback logo
  */
 
 // Demo typescales at https://typescale.com/
 const typeScale = 1.333;
 
-export default {
+const defaultTheme = {
 	colors: {
 		primary: '#e97462',
 		secondary: '#370e4a',
@@ -44,4 +44,4 @@ export default {
 	}, { sm: '0.75rem', default: '1rem' })
 };
 
-
+export default defaultTheme;

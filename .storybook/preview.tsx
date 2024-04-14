@@ -1,9 +1,11 @@
 // @ts-ignore
-import React from 'react';
+import React, {useCallback, useEffect} from 'react';
 import type { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer, Unstyled } from '@storybook/blocks';
 import RedbackUiThemeProvider from '../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
 import { themes } from '../src/themes';
+import {addons} from "@storybook/manager-api";
+import {DARK_MODE_EVENT_NAME, UPDATE_DARK_MODE_EVENT_NAME} from "storybook-dark-mode";
 
 const preview: Preview = {
 	globalTypes: {
@@ -49,7 +51,9 @@ const preview: Preview = {
 		},
 		docs: {
 			container: ({ children, context }) => {
-				const theme = context.channel.data.setGlobals[0].globals.theme ?? 'default';
+				const theme = context.channel.data.globalsUpdated?.[0]?.globals?.theme ?? (context.channel.data.setGlobals[0].globals.theme ?? 'default');
+				localStorage.setItem('ui-theme', theme);
+
 				return (
 					<RedbackUiThemeProvider theme={themes[theme]}>
 						<DocsContainer context={context}>

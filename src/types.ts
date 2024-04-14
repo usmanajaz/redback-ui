@@ -3,6 +3,7 @@ import omit from 'lodash/omit';
 import pick from 'lodash/pick';
 
 export type RedbackUiTheme = typeof themes.default;
+export type RedbackUiThemeName = keyof typeof themes;
 
 // To be used in Storybook and anywhere else we want to access this subset
 export const themeColorSubset = omit(themes.default.colors, ['light', 'dark', 'background']);
