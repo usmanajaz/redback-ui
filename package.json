@@ -4,13 +4,12 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "storybook dev --port 6006",
     "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test:unit": "jest ./src/components/**/*.test.tsx",
-    "preview": "vite preview",
     "storybook": "storybook dev --port 6006",
-    "build-storybook": "storybook build"
+    "build": "storybook build",
+    "preview": "npx http-server ./storybook-static"
   },
   "dependencies": {
     "@storybook/addon-docs": "^8.0.5",
