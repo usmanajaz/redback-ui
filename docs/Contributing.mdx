@@ -4,8 +4,9 @@
 2. [Getting started](#getting-started)
 3. [Creating a new component](#creating-a-new-component)
 4. [Working with documentation pages](#working-with-documentation-pages)
-5. [Submitting your change](#submitting-your-change)
-6. [Useful links](#useful-links)
+5. [Before submitting your change](#before-submitting-your-change)
+6. [Submitting your change](#submitting-your-change)
+7. [Useful links](#useful-links)
 
 ---
 
@@ -91,6 +92,19 @@ Like regular components, [generate-react-cli](https://www.npmjs.com/package/gene
 ```bash
 npx generate-react-cli component ComponentName --type=doc
 ```
+
+## Before submitting your change
+
+Test the built version of Storybook to make sure everything works as expected, so that when your PR is approved and merged into the main branch you can be confident that you haven't introduced any errors such as incorrect file paths.
+
+1. Build Storybook
+	```bash
+	npm run build
+	```
+2. Preview the built version locally
+	```bash
+	npm run preview
+	```
 
 ## Submitting your change
 

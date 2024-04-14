@@ -12,7 +12,7 @@ const defaultTheme = {
 		subtle: '#b3a7b7',
 		light: '#f8f9fa',
 		dark: '#0e080e',
-		success: '#00af60',
+		success: '#00b285',
 		error: '#84213A',
 		warning: '#e97462',
 		info: '#00aeb2',

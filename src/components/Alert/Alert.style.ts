@@ -7,6 +7,7 @@ export const StyledAlert = styled.div<{type: 'success' | 'info' | 'warning' | 'e
 	border-left-width: ${props => props.theme.spacing.sm};
 	color: ${props => readableColor(props.theme.colors[props.type])};
 	padding: ${props => props.theme.spacing.md};
+	box-sizing: border-box;
 	margin-bottom: ${props => props.theme.spacing.lg};
 	background: ${props => {
 		const isDark = getLuminance(props.theme.colors.background) < 0.5;

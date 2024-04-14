@@ -4,7 +4,6 @@ import type { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer, Unstyled } from '@storybook/blocks';
 import RedbackUiThemeProvider from '../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
 import { themes } from '../src/themes';
-import Alert from "../src/components/Alert/Alert";
 
 const preview: Preview = {
 	globalTypes: {
@@ -51,7 +50,9 @@ const preview: Preview = {
 		docs: {
 			container: ({ children, context }) => {
 				const theme = context.channel.data.globalsUpdated?.[0]?.globals?.theme ?? (context.channel.data.setGlobals[0].globals.theme ?? 'default');
-				localStorage.setItem('ui-theme', theme);
+				if(Object.keys(themes).includes(theme)) {
+					localStorage.setItem('ui-theme', theme);
+				}
 
 				return (
 					<RedbackUiThemeProvider theme={themes[theme]}>
