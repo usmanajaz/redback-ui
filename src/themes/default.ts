@@ -3,7 +3,7 @@
  */
 
 // Demo typescales at https://typescale.com/
-const typeScale = 1.333;
+const typeScale = 1.25;
 
 const defaultTheme = {
 	colors: {
@@ -26,6 +26,7 @@ const defaultTheme = {
 		xl: '2rem',
 		xxl: '3rem'
 	},
+	typeScale: typeScale,
 	fontFamily: {
 		body: '\'Inter Tight\', sans-serif',
 		heading: '\'Inter Tight\', sans-serif',
@@ -41,7 +42,7 @@ const defaultTheme = {
 		const prev: string = <string>Object.values(result).pop();
 		result[size] = `${parseFloat(prev.replace('rem', '')) * typeScale}rem`;
 		return result;
-	}, { sm: '0.75rem', default: '1rem' })
+	}, { sm: '0.8rem', default: '1rem' })
 };
 
 export default defaultTheme;
