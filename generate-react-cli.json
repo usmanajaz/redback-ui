@@ -23,8 +23,8 @@
 			"withStory": false,
 			"withLazy": false,
 			"customTemplates": {
-				"component": "./templates/TemplateName.doc.tsx",
-				"style": "./templates/TemplateName.doc.style.ts"
+				"component": "./templates/TemplateName.tsx",
+				"style": "./templates/TemplateName.style.ts"
 			}
 		}
 	}

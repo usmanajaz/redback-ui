@@ -63,9 +63,9 @@ A new folder named with your component name will be created in the `src/componen
 - `ComponentName.test.tsx`: the unit test file. A basic example is included. Please add further tests as relevant to your component.
 
 ### Theme and design tokens
-Design tokens are used to maintain consistency across the design system and applications that use it. The tokens are defined in a `theme.ts` file.
+Design tokens are used to maintain consistency across the design system and applications that use it. The tokens are defined in a JavaScript object.
 
-All apps/websites consuming Redback UI should define a theme with keys matching the example provided in Redback UI (i.e., of type `RedbackUiTheme)`, and be wrapped in a `RedbackUiThemeProvider` component imported from Redback UI. This component is a wrapper for styled-components' `ThemeProvider` that expects the tokens we have defined.
+All apps/websites consuming Redback UI should define a theme with keys matching the example provided in Redback UI (i.e., of type `RedbackUiTheme`), and be wrapped in a `RedbackUiThemeProvider` component imported from Redback UI. This component is a wrapper for styled-components' `ThemeProvider` that expects the tokens we have defined.
 
 When developing components for Redback UI, please use design tokens wherever possible rather than hard-coding values. This will ensure consistency and make it easier to apply new themes or update the design system in the future.
 
@@ -103,6 +103,7 @@ npx generate-react-cli component ComponentName --type=doc
 	git commit -m "A brief description of your changes"
 	```
 3. Push your changes up to GitHub
+
 	For the first time:
 	```bash
 	git push --set-upstream origin <branch-name>
