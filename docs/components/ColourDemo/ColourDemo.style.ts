@@ -4,7 +4,6 @@ import { getLuminance, shade, tint } from 'polished';
 
 export const StyledColourDocs = styled.div`
 	background: ${props => props.theme.colors.background};
-	padding: ${props => props.theme.spacing.lg};
 	margin-bottom: ${props => props.theme.spacing.xl};
 `;
 

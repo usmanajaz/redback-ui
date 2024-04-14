@@ -1,11 +1,10 @@
 // @ts-ignore
-import React, {useCallback, useEffect} from 'react';
+import React from 'react';
 import type { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer, Unstyled } from '@storybook/blocks';
 import RedbackUiThemeProvider from '../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
 import { themes } from '../src/themes';
-import {addons} from "@storybook/manager-api";
-import {DARK_MODE_EVENT_NAME, UPDATE_DARK_MODE_EVENT_NAME} from "storybook-dark-mode";
+import Alert from "../src/components/Alert/Alert";
 
 const preview: Preview = {
 	globalTypes: {

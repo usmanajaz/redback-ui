@@ -1,18 +1,21 @@
 import { FC } from 'react';
 import { ColourDemoBlock, ColourDemoGrid, StyledColourDocs } from './ColourDemo.style';
-import { RedbackUiTheme } from '../../../src/types';
+import { RedbackUiTheme, RedbackUiThemeName } from '../../../src/types';
 import RedbackUiThemeProvider from '../../../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
+import { themes } from '../../../src/themes';
+import Alert from '../../../src/components/Alert/Alert';
 
-type ColourDocProps = {
-	name: string;
-	theme: RedbackUiTheme;
-}
+const ColourDemo: FC = () => {
+	const themeName = localStorage.getItem('ui-theme') as RedbackUiThemeName;
+	const theme: RedbackUiTheme = themes[themeName];
 
-const ColourDemo: FC<ColourDocProps> = ({ name, theme }: ColourDocProps) => {
 	return (
 		<RedbackUiThemeProvider theme={theme}>
+			<Alert type="info">
+				<p>You are currently viewing these docs with Redback's <strong>{themeName}</strong> theme.</p>
+				<p>You can select a different theme in the toolbar at the top of the page.</p>
+			</Alert>
 			<StyledColourDocs data-testid="Colour Docs">
-				<h2>{name}</h2>
 				<ColourDemoGrid>
 					{Object.entries(theme.colors).map(([key, value]) => (
 						<ColourDemoBlock key={key} $color={key}>
