@@ -37,3 +37,35 @@ export const Default: Story = {
 	},
 	...disableControls
 };
+
+export const Success: Story = {
+	args: {
+		...defaultProps,
+		type: 'success'
+	},
+	...disableControls
+};
+
+export const Info: Story = {
+	args: {
+		...defaultProps,
+		type: 'info'
+	},
+	...disableControls
+};
+
+export const Warning: Story = {
+	args: {
+		...defaultProps,
+		type: 'warning'
+	},
+	...disableControls
+};
+
+export const Error: Story = {
+	args: {
+		...defaultProps,
+		type: 'error'
+	},
+	...disableControls
+};
