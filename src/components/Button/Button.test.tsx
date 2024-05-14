@@ -1,12 +1,23 @@
-import { render, screen } from '@testing-library/react';
+import { screen, fireEvent }  from '@testing-library/react';
+import { renderWithDeps } from '../../../jest.utils.tsx';
 import Button from './Button';
 
+const mockClick = jest.fn();
+
 describe('<Button />', () => {
-	test('it should mount', () => {
-		render(<Button/>);
+	it('renders', () => {
+		renderWithDeps(<Button label="Test button" onClick={mockClick}/>);
 
-		const button = screen.getByTestId('Button');
+		expect(screen.getByRole('button', { name: 'Test button' })).toBeVisible();
+	});
 
-		expect(button).toBeInTheDocument();
+	it('calls the click handler',  () => {
+		renderWithDeps(<Button label="Test button" onClick={mockClick}/>);
+
+		const button = screen.getByRole('button', { name: 'Test button' });
+
+		fireEvent.click(button);
+
+		expect(mockClick).toHaveBeenCalledTimes(1);
 	});
 });

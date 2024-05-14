@@ -1,12 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithDeps } from '../../../jest.utils.tsx';
 import Label from './Label';
 
 describe('<Label />', () => {
-	it('should mount', () => {
-		render(<Label/>);
+	it('renders', () => {
+		renderWithDeps(<Label type="info" text="Test label"/>);
 
-		const label = screen.getByTestId('Label');
-
-		expect(label).toBeInTheDocument();
+		expect(screen.getByText('Test label')).toBeVisible();
 	});
 });

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { rgba } from 'polished';
+import './fonts.css';
 
 export const GlobalStyle = createGlobalStyle`
 	body {

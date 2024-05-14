@@ -1,12 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithDeps } from '../../../jest.utils.tsx';
 import Alert from './Alert';
 
 describe('<Alert />', () => {
-	it('should mount', () => {
-		render(<Alert>Example alert</Alert>);
+	it('renders', () => {
+		renderWithDeps(<Alert>Example alert</Alert>);
 
-		const alert = screen.getByTestId('Alert');
-
-		expect(alert).toBeInTheDocument();
+		expect( screen.getByText('Example alert')).toBeInTheDocument();
 	});
 });

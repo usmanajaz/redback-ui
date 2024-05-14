@@ -1,12 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithDeps } from '../../../jest.utils.tsx';
 import LinkButton from './LinkButton';
 
 describe('<LinkButton />', () => {
-	it('should mount', () => {
-		render(<LinkButton/>);
+	it('renders', () => {
+		renderWithDeps(<LinkButton label="Test link" href="#" />);
 
-		const linkButton = screen.getByTestId('LinkButton');
-
-		expect(linkButton).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: 'Test link' })).toBeVisible();
 	});
 });

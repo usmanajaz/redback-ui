@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import './fonts.css';
 import { readableColor } from 'polished';
 
 export const RedbackUiWrapper = styled.div`
