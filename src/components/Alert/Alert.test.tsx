@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { renderWithDeps } from '../../../jest.utils.tsx';
-import Alert from './Alert';
+import { renderWithDeps } from '../../../jest.utils';
+import { Alert } from './Alert';
 
 describe('<Alert />', () => {
 	it('renders', () => {

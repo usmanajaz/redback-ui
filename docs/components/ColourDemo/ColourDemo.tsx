@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { ColourDemoBlock, ColourDemoGrid, StyledColourDocs } from './ColourDemo.style';
-import { RedbackUiTheme, RedbackUiThemeName } from '../../../src/types';
-import RedbackUiThemeProvider from '../../../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
-import { themes } from '../../../src/themes';
-import Alert from '../../../src/components/Alert/Alert';
+import { RedbackUiTheme, RedbackUiThemeName, ThemeColor } from '../../../src/types';
+import { RedbackUiThemeProvider } from '../../../src';
+import { themes } from '../../../src';
+import { Alert } from '../../../src';
 
 const ColourDemo: FC = () => {
 	const themeName = localStorage.getItem('ui-theme') as RedbackUiThemeName;
@@ -18,7 +18,7 @@ const ColourDemo: FC = () => {
 			<StyledColourDocs data-testid="Colour Docs">
 				<ColourDemoGrid>
 					{Object.entries(theme.colors).map(([key, value]) => (
-						<ColourDemoBlock key={key} $color={key}>
+						<ColourDemoBlock key={key} $color={key as ThemeColor}>
 							<div></div>
 							<span>{key} <strong>{value}</strong></span>
 						</ColourDemoBlock>

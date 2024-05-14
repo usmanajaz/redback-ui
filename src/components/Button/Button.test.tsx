@@ -1,6 +1,6 @@
 import { screen, fireEvent }  from '@testing-library/react';
-import { renderWithDeps } from '../../../jest.utils.tsx';
-import Button from './Button';
+import { renderWithDeps } from '../../../jest.utils';
+import { Button } from './Button';
 
 const mockClick = jest.fn();
 

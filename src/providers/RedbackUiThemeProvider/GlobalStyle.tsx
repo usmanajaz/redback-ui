@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { rgba } from 'polished';
-import './fonts.css';
 
 export const GlobalStyle = createGlobalStyle`
 	@import 'https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap';

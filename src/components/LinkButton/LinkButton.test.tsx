@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { renderWithDeps } from '../../../jest.utils.tsx';
-import LinkButton from './LinkButton';
+import { renderWithDeps } from '../../../jest.utils';
+import { LinkButton } from './LinkButton';
 
 describe('<LinkButton />', () => {
 	it('renders', () => {

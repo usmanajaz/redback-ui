@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { renderWithDeps } from '../../../jest.utils.tsx';
-import Label from './Label';
+import { renderWithDeps } from '../../../jest.utils';
+import { Label } from './Label';
 
 describe('<Label />', () => {
 	it('renders', () => {

@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { StyledTypographyDemo } from './TypographyDemo.style';
 import { RedbackUiTheme, RedbackUiThemeName } from '../../../src/types';
-import { themes } from '../../../src/themes';
-import RedbackUiThemeProvider from '../../../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
-import Alert from '../../../src/components/Alert/Alert';
-import Table from '../../../src/components/Table/Table';
-import TruncatedText from '../../../src/components/TruncatedText/TruncatedText';
+import { themes } from '../../../src';
+import { RedbackUiThemeProvider } from '../../../src';
+import { Alert } from '../../../src';
+import { Table } from '../../../src';
+import { TruncatedText } from '../../../src';
 
 type TypographyDemoProps = {
 	name: string;
