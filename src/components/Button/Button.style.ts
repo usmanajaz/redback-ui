@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ThemeColor, ThemeElementAppearance, ThemeElementSize } from '../../types.ts';
+import { ThemeColor, ThemeElementAppearance, ThemeElementSize } from '../../types';
 import { readableColor, shade } from 'polished';
 
 type StyledButtonProps = {

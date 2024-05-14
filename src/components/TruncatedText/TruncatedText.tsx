@@ -6,12 +6,10 @@ type TruncatedTextProps = {
 	lines: number;
 }
 
-const TruncatedText: FC<PropsWithChildren<TruncatedTextProps>> = ({ lines, text }) => {
+export const TruncatedText: FC<PropsWithChildren<TruncatedTextProps>> = ({ lines, text }) => {
 	return (
 		<StyledTruncatedText data-testid="TruncatedText" lines={lines}>
 			{text}
 		</StyledTruncatedText>
 	);
 };
-
-export default TruncatedText;

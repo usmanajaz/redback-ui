@@ -1,6 +1,6 @@
-import LinkButton from './LinkButton';
+import { LinkButton } from './LinkButton';
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeColorSubset } from '../../types.ts';
+import { themeColorSubset } from '../../types';
 
 const meta = {
 	title: 'Components/LinkButton',

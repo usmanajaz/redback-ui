@@ -1,4 +1,4 @@
-import TruncatedText from './TruncatedText';
+import { TruncatedText } from './TruncatedText';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

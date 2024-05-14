@@ -6,12 +6,10 @@ type LabelProps = {
 	text: string;
 }
 
-const Label: FC<LabelProps> = ({ type, text }: LabelProps) => {
+export const Label: FC<LabelProps> = ({ type, text }: LabelProps) => {
 	return (
 		<StyledLabel data-testid="Label" type={type}>
 			{text}
 		</StyledLabel>
 	);
 };
-
-export default Label;

@@ -1,7 +1,7 @@
-import Button from './Button';
+import { Button } from './Button';
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeColorSubset } from '../../types.ts';
+import { themeColorSubset } from '../../types';
 
 const meta = {
 	title: 'Components/Button',

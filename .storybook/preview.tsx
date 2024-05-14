@@ -2,7 +2,7 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer, Unstyled } from '@storybook/blocks';
-import RedbackUiThemeProvider from '../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
+import { RedbackUiThemeProvider } from '../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
 import { themes } from '../src/themes';
 
 const preview: Preview = {

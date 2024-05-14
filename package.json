@@ -3,14 +3,17 @@
   "version": "0.0.1",
   "type": "module",
   "license": "MIT",
+  "exports": "./dist/index.js",
   "scripts": {
     "dev": "storybook dev --port 6006",
     "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+	"lint:fix": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "lint:structure": "eslint --parser ./node_modules/eslint-plugin-project-structure/dist/parser.js --rule project-structure/file-structure:error --ext .js,.jsx,.ts,.tsx,.html,.css,.svg,.png,.jpg,.json,.md .",
-    "test:unit": "jest ./src/components/**/*.test.tsx",
+    "test:unit": "jest --modulePathIgnorePatterns=dist ./src/components/**/*.test.tsx",
     "storybook": "storybook dev --port 6006",
     "build": "storybook build",
-    "preview": "npx http-server ./storybook-static"
+    "preview": "npx http-server ./storybook-static",
+    "package": "tsc -p tsconfig.dist.json"
   },
   "dependencies": {
     "@storybook/addon-docs": "^8.0.5",
@@ -48,6 +51,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "babel-jest": "^29.7.0",
+    "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^8.57.0",
     "eslint-plugin-project-structure": "^1.4.7",
     "eslint-plugin-react-hooks": "^4.6.0",

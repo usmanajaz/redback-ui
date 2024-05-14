@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { StyledButton } from './Button.style.ts';
-import { ThemeColor, ThemeElementAppearance, ThemeElementSize } from '../../types.ts';
+import { StyledButton } from './Button.style';
+import { ThemeColor, ThemeElementAppearance, ThemeElementSize } from '../../types';
 
 type ButtonProps = {
 	label: string;
@@ -10,7 +10,7 @@ type ButtonProps = {
 	size?: ThemeElementSize;
 }
 
-const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
 	label,
 	color = 'primary',
 	onClick,
@@ -23,5 +23,3 @@ const Button: FC<ButtonProps> = ({
 		</StyledButton>
 	);
 };
-
-export default Button;

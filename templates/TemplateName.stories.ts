@@ -1,4 +1,4 @@
-import TemplateName from './TemplateName';
+import { TemplateName } from './TemplateName';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { StyledLinkButton } from './LinkButton.style';
-import { ThemeColor, ThemeElementAppearance, ThemeElementSize } from '../../types.ts';
+import { ThemeColor, ThemeElementAppearance, ThemeElementSize } from '../../types';
 
 type LinkButtonProps = {
 	label: string;
@@ -11,7 +11,7 @@ type LinkButtonProps = {
 	target?: '_blank';
 }
 
-const LinkButton: FC<LinkButtonProps> = ({
+export const LinkButton: FC<LinkButtonProps> = ({
 	label,
 	color = 'primary',
 	href = '#',
@@ -25,5 +25,3 @@ const LinkButton: FC<LinkButtonProps> = ({
 		</StyledLinkButton>
 	);
 };
-
-export default LinkButton;

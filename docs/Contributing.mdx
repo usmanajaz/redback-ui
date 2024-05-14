@@ -74,6 +74,8 @@ A new folder named with your component name will be created in the `src/componen
 - `ComponentName.stories.tsx`: the [Storybook](https://storybook.js.org/) file used to see, test, and document the component
 - `ComponentName.test.tsx`: the unit test file. A basic example is included. Please add further tests as relevant to your component.
 
+**Important!** To enable your component to be used by other apps or websites using the short `import { YourComponent } from '@redbackops/redback-ui'` syntax, you will need to export it from `src/index.ts`. Please add it to the list following the same format as the other components, and in alphabetical order.
+
 ### Theme and design tokens
 Design tokens are used to maintain consistency across the design system and applications that use it. The tokens are defined in a JavaScript object.
 
@@ -106,16 +108,44 @@ npx generate-react-cli component ComponentName --type=doc
 
 ## Before submitting your change
 
-Test the built version of Storybook to make sure everything works as expected, so that when your PR is approved and merged into the main branch you can be confident that you haven't introduced any errors such as incorrect file paths.
+1. Test the built version of Storybook to make sure everything works as expected, so that when your PR is approved and merged into the main branch you can be confident that you haven't introduced any errors such as incorrect file paths.
 
-1. Build Storybook
+	- Build Storybook
+		```bash
+		npm run build
+		```
+	- Preview the built version locally
+		```bash
+		npm run preview
+		```
+
+2. Run ESLint to check for any formatting or quality issues in your code according to the project's ESLint configuration.
+
 	```bash
-	npm run build
+	npm run lint
 	```
-2. Preview the built version locally
+
+	Some issues can be fixed automatically:
 	```bash
-	npm run preview
+	npm run lint:fix
 	```
+
+	It is recommended to enable running ESLint on save in your IDE to catch issues and reformat code as you work.
+
+	If you would like to add or edit a rule in the ESLint configuration, please raise a pull request with your change and include the reasoning in the description.
+
+
+3. Ensure your files follow the expected structure
+
+	```bash
+	npm run lint:structure
+	```
+
+	_**Note**: This will also run the general ESLint checks from step 2, so it's a good idea to run that first so you can fix any issues before running the structure check._
+
+4. If you created a new component, ensure it is exported by opening `src/index.ts` and add your component to the list following the same format as the other components, and in alphabetical order.
+
+5. Bump the version number in `package.json` according to the [Semantic Versioning](https://semver.org/) guidelines.
 
 ## Submitting your change
 
@@ -137,7 +167,7 @@ Test the built version of Storybook to make sure everything works as expected, s
 	```bash
 	git push
 	```
-4. Create a pull request on GitHub, ensuring your include a clear description of your changes and any relevant context for reviewers.
+4. Create a pull request on GitHub, in [the main Redback UI repository](https://github.com/Redback-Operations/redback-ui), ensuring your include a clear description of your changes and any relevant context for reviewers.
 
 ## Video tutorials
 1. [Local setup](https://www.loom.com/share/d77050ce968e4c3690f1760988318de3?sid=d2426caa-3dbf-4477-97a3-0e6beb4391d9) (5 minutes)

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import RedbackUiThemeProvider from './RedbackUiThemeProvider';
+import { RedbackUiThemeProvider } from './RedbackUiThemeProvider';
 import { themes } from '../../themes';
 
 describe('<RedbackUiThemeProvider />', () => {
