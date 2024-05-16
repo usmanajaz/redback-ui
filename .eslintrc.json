@@ -25,12 +25,14 @@
 	"rules": {
 		"project-structure/file-structure": "error",
 		"storybook/default-exports": "off",
-		"indent": ["warn", "tab", {
+		"indent": ["error", "tab", {
 			"SwitchCase": 2,
 			"FunctionExpression": {
-				"parameters": 2,
+				"parameters": 1,
 				"body": 1
-            }
+			},
+			"MemberExpression": 1,
+			"offsetTernaryExpressions": true
 		}],
 		"quotes": [
 			"warn",
@@ -56,6 +58,7 @@
 		"@typescript-eslint/no-var-requires": "off",
 		"@typescript-eslint/no-inferrable-types": "off",
 		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-unused-vars": "warn",
 		"react-refresh/only-export-components": [
 			"warn",
 			{
